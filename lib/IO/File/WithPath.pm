@@ -1,13 +1,14 @@
 package IO::File::WithPath;
 use strict;
 use warnings;
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 use base qw/IO::File/;
+use File::Spec;
 
 sub new {
     my $class = shift;
-    my $path  = shift;
+    my $path  = File::Spec->rel2abs(shift);
 
     my $io = IO::File->new($path, @_);
 
