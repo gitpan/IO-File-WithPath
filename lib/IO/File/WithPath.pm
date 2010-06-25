@@ -1,7 +1,7 @@
 package IO::File::WithPath;
 use strict;
 use warnings;
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 use base qw/IO::File/;
 use File::Spec;
@@ -56,10 +56,6 @@ but file-path not include MODE.(e.g. '</path/to/file')
 =item path
 
 file-path
-
-=item filename
-
-alias to path.
 
 =back
 
