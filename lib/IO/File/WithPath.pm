@@ -1,7 +1,7 @@
 package IO::File::WithPath;
 use strict;
 use warnings;
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 use base qw/IO::File/;
 use File::Spec;
@@ -22,6 +22,7 @@ sub path {
     my $io = shift;
     ${*$io}{+__PACKAGE__};
 }
+*filename = \&path;
 
 
 1;
@@ -56,6 +57,10 @@ but file-path not include MODE.(e.g. '</path/to/file')
 =item path
 
 file-path
+
+=item filename
+
+alias to path.
 
 =back
 
